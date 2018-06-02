@@ -23,7 +23,7 @@ Task("Nuget-Publish")
     .IsDependentOn("Nuget-Package")
     .Does(() =>
 {
-	var package = dir "Microsoft.Lync2013SDK*.nupkg";
+	var package = GetFiles("./Microsoft.Lync2013SDK.*.nupkg").FirstOrDefault();
 	
 	NuGetPush(package, new NuGetPushSettings {
 		Source = "https://api.nuget.org/v3/index.json",
