@@ -8,10 +8,10 @@ pipeline{
     }
 
     stages {
-        stage('PackageAndPublish') {
+        stage('BuildAndTest') {
             steps {
                 checkout scm
-                bat 'nuget.exe'
+                bat 'powershell.exe -file ./build.ps1 -Target Default'
             }
         }
     }
