@@ -16,13 +16,19 @@ var target = Argument("target", "Default");
 Task("Nuget-Package")
     .Does(() =>
 {
-	NuGetPack("./Microsoft.Lync2013SDK.nuspec");	
+	NuGetPack("./Microsoft.Lync2013SDK.nuspec", new NuGetPackSettings{});	
 });
 
 Task("Nuget-Publish")
     .IsDependentOn("Nuget-Package")
     .Does(() =>
 {
+	var package = dir "Microsoft.Lync2013SDK*.nupkg";
+	
+	NuGetPush(package, new NuGetPushSettings {
+		Source = "https://api.nuget.org/v3/index.json",
+		ApiKey = "oy2iak5atkjdmdibq3caplvy3ihr4a3udkdypopl2jel7m"
+	});
 });
 
 //////////////////////////////////////////////////////////////////////
