@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>Microsoft.Lync2013SDK</id>
+    <id>Lync2013SDK</id>
     <version>15.0.4466.1000</version>
     <authors>microsoft</authors>
     <owners>microsoft</owners>
